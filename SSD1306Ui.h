@@ -205,5 +205,6 @@ class SSD1306Ui {
     SSD1306UiState getUiState();
 
     int update();
+    int update(bool);
 };
 

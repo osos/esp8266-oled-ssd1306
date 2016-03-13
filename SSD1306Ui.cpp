@@ -93,6 +93,12 @@ SSD1306UiState SSD1306Ui::getUiState(){
   return this->state;
 }
 
+// force UI update?
+int SSD1306Ui::update(bool forcedirty) {
+  if (forcedirty)
+    this->dirty = true;
+  return this->update();
+}
 
 int SSD1306Ui::update(){
   int timeBudget = this->updateInterval - (millis() - this->state.lastUpdate);
